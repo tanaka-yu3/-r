@@ -1,0 +1,15 @@
+<h1>edit page</h1>
+
+<%= form_for(@book) fo |f| %>
+
+<p>title</p>
+<%= f.text_field %>
+
+<p>Opinion</p>
+<%= f.text_area %>
+
+<%= f.submit "Create book"%>
+
+<%= link_to"show",book_path %>|
+<%= link_to "back",book_index_path %>
+<% end %>

@@ -1,0 +1,21 @@
+<h1>Home#top</h1>
+<p>Find me in app/views/home/top.html.erb</p>
+
+<div>
+	<% if flash[:destroy] %>
+	<p calsss="falsh-txt" ><%= flash[:destroy] %></p>
+	<% end %>
+
+	<h1>welcome to<span class="glyphicon glyphicon-book" aria-hidden="true"></span>Bookers !!</h1>
+	<p>In<span class="glyphicon glyphicon-book" aria-hidden="true"></span><strong>Bookers</strong></p>
+	<p>you can share and exchange your opinions , inpressions , and emotions<br>about various books!</p>
+
+	<%= link_to new_user_registration_path do %>
+	<button type="button" class="btn btn-success">log_in</button>
+	<% end %><br>
+
+	<%= link_to new_user_registration_path do %>
+	<button type="button" class="btn btn-info">sign_in</button>
+	<% end %>
+</div>
+

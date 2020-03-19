@@ -1,0 +1,26 @@
+<div>
+
+	<h2>Book deatil</h2>
+	<table>
+			<tr>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+			<tr>
+				<th><%= @user,profile_image %><%= link_to"user",book_index_path %></th>
+				<th><%= @book.title %></th>
+				<th><%= @book.body %></th>
+				<th><%= link_to "edit",edit_book_path(@book.id) %></th>
+				<th>
+					<% if @user== current_user %>
+					<%= link_to "destroy",book_path(@book.id), method: :delete ,data:{confirm:"Are you sure?"} %>
+					<% end %>
+					</th>
+			</tr>
+	</table>
+
+	
+</div>
