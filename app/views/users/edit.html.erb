@@ -1,0 +1,27 @@
+<div class="edit_page">
+
+
+
+<h2>User info</h2>
+
+<%= form_for(@user) do |f| %>
+<% if @user.errors.any? %>
+   <p class=" error-title">2 errors prohibited this book from being saved:</p>
+   <ul>
+     <li>name can't be blank</li>
+     <li>introduction is too short (minimum is 2 characters)</li>
+   </ul>
+ <% end %>
+<p>name</p>
+<%= f.text_field :name %>
+
+<p>photo</p>
+<%= f.attachment_field :profile_image %>
+
+<p>introduction</p>
+<%= f.text_area :introduction %>
+<%= f.submit %>
+<% end %>
+
+</div>
+

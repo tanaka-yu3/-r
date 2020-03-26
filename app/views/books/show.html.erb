@@ -1,0 +1,27 @@
+<% if flash[:update]%>
+   <p class="flash-txt"><%= flash[:update] %></p>
+  <% end %>
+
+<%= render"/users/list",user:@user,book:@new_book %>
+
+<div class='col-xs-9'>
+<h1>Book detail</h1>
+<table class="table table-striped">
+	<tr><td></td><td></td><td></td><td></td><td></td></tr>
+	<tr>
+		<td><%= link_to(user_path(@book.user.id)) do %>
+			<%= attachment_image_tag(@user,:profile_image, :fill,50,50,format:"jpeg",fallback: "no_image.jpg") %>
+			<%= @book.user.name%>
+			<% end %>
+		</td>
+		<td><%= @book.title %></td>
+		<td><%= @book.body %></td>
+
+		<% if @book.user_id == current_user.id %>
+		<td><%= link_to "Edit",edit_book_path(@book.id) %></td>
+		<td><%= link_to"Destroy",book_path(@book.id), method: :delete ,data:{confirm:"Are you sure?"} %>
+		</td>
+		<% end %>
+	</tr>
+</table>
+</div>
